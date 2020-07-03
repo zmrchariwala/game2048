@@ -26,22 +26,29 @@ export default {
           value:1
         },
           {
-          id:3
+          id:3,
+          value:""
+
         },
         {
-          id:4
+          id:4,
+          value:""
         },
           {
-          id:5
+          id:5,
+          value:""
         },
         {
-          id:6
+          id:6,
+          value:""
         },
           {
-          id:7
+          id:7,
+          value:1
         },
         {
-          id:8
+          id:8,
+          value:1
         },
           {
           id:9
@@ -73,11 +80,138 @@ export default {
   methods:{
     rightmove(){
       alert("Right");
-      if(this.squares[0].value === this.squares[1].value)
+      if((this.squares[0].value === this.squares[1].value) && ((this.squares[2].value === this.squares[3].value)) && (this.squares[2].value != "" && this.squares[3].value != "" ))
       {
-        this.squares[1].value = this.squares[0].value + this.squares[1].value;
+        alert("second");
+        this.squares[3].value = this.squares[2].value + this.squares[3].value;
+        this.squares[2].value = "";
+        this.squares[2].value = this.squares[0].value + this.squares[1].value;
+        this.squares[0].value = "";
+        this.squares[1].value = "";
+
       }
-      alert(this.squares[1].value);
+      else if((this.squares[0].value == this.squares[1].value) && (this.squares[2].value == "" && this.squares[3].value==""))
+      {
+        alert("first");
+        this.squares[3].value = this.squares[0].value + this.squares[1].value;
+        
+        this.squares[1].value = "";
+        this.squares[0].value ="";
+      }
+      else if((this.squares[0].value == this.squares[1].value) && (this.squares[2].value == "" && this.squares[3].value!=""))
+      {
+        alert("first1");
+        this.squares[2].value = this.squares[0].value + this.squares[1].value;
+        
+        this.squares[1].value = "";
+        this.squares[0].value ="";
+      }
+      else if((this.squares[1].value == this.squares[2].value))
+      {
+        if(this.squares[3].value == "")
+        {
+          this.squares[3].value = this.squares[1].value + this.squares[2].value;
+          if(this.squares[0].value != "")
+          {
+            this.squares[2].value = this.squares[0].value;
+            this.squares[0].value = "";
+            this.squares[1].value = "";
+          }
+        }
+        else
+        {
+          this.squares[2].value = this.squares[1].value + this.squares[2].value;
+          this.squares[1].value = this.squares[0].value;
+          this.squares[0].value = "";
+        }
+      }
+      else if((this.squares[0].value == this.squares[1].value) && ((this.squares[2].value != "" && this.squares[3].value!="")&& this.squares[2].value != this.squares[3].value))
+      {
+        alert("first1");
+        this.squares[1].value = this.squares[0].value + this.squares[1].value;
+        
+        //this.squares[1].value = "";
+        this.squares[0].value ="";
+      }
+      else if((this.squares[2].value === this.squares[3].value) && ((this.squares[0].value != this.squares[1].value) && this.squares[0].value !="" && this.squares[1].value != ""))
+      {
+        alert("2 1 1 1");
+        this.squares[3].value = this.squares[2].value + this.squares[3].value;
+        this.squares[2].value = this.squares[1].value;
+        this.squares[1].value = this.squares[0].value;
+        this.squares[0].value ="";
+      }
+      
+
+      //Second Line
+
+      if((this.squares[4].value === this.squares[5].value) && ((this.squares[6].value === this.squares[7].value)) && (this.squares[6].value != "" && this.squares[7].value != "" ))
+      {
+        alert("second");
+        this.squares[7].value = this.squares[6].value + this.squares[7].value;
+        this.squares[6].value = "";
+        this.squares[6].value = this.squares[4].value + this.squares[5].value;
+        this.squares[4].value = "";
+        this.squares[5].value = "";
+
+      }
+      else if((this.squares[4].value == this.squares[5].value) && (this.squares[6].value == "" && this.squares[7].value==""))
+      {
+        alert("first");
+        this.squares[7].value = this.squares[4].value + this.squares[5].value;
+        
+        this.squares[5].value = "";
+        this.squares[4].value ="";
+      }
+      else if((this.squares[4].value == this.squares[5].value) && (this.squares[6].value == "" && this.squares[7].value!=""))
+      {
+        alert("first1");
+        this.squares[6].value = this.squares[4].value + this.squares[5].value;
+        
+        this.squares[5].value = "";
+        this.squares[4].value ="";
+      }
+      else if((this.squares[5].value == this.squares[6].value))
+      {
+        if(this.squares[7].value == "")
+        {
+          this.squares[7].value = this.squares[5].value + this.squares[6].value;
+          if(this.squares[4].value != "")
+          {
+            this.squares[6].value = this.squares[4].value;
+            this.squares[4].value = "";
+            this.squares[5].value = "";
+          }
+        }
+        else
+        {
+          this.squares[6].value = this.squares[5].value + this.squares[6].value;
+          this.squares[5].value = this.squares[4].value;
+          this.squares[4].value = "";
+        }
+      }
+      else if((this.squares[4].value == this.squares[5].value) && ((this.squares[6].value != "" && this.squares[7].value!="")&& this.squares[6].value != this.squares[7].value))
+      {
+        alert("first1");
+        this.squares[5].value = this.squares[4].value + this.squares[5].value;
+        
+        //this.squares[1].value = "";
+        this.squares[4].value ="";
+      }
+      else if((this.squares[6].value === this.squares[7].value) && ((this.squares[4].value != this.squares[5].value) && this.squares[4].value !="" && this.squares[5].value != ""))
+      {
+        alert("2 1 1 1");
+        this.squares[7].value = this.squares[6].value + this.squares[7].value;
+        this.squares[6].value = this.squares[5].value;
+        this.squares[5].value = this.squares[4].value;
+        this.squares[4].value ="";
+      }
+      
+
+      
+      
+      
+      //alert(this.squares[1].value);
       
     },
     leftmove(){
